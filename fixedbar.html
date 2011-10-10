@@ -9,28 +9,7 @@ Webpage : vinaychittora.blogspot.com
 	<title>A fixed Position Bottom Bar (Example)</title>
 	<link href="css/fxedbar.css" rel="stylesheet" />
 	<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
-	<script type="text/javascript">
-		var global_max_item = 10;
-		jQuery(function( $ ){
-			$('#addItems').live("click",function(){
-					if (global_max_item > 0){
-						$('ul#site-bottom-bar-items').append("<li id='site-bottom-bar-item-"+global_max_item+"'><img src='images/sw"+Math.ceil(Math.random()*17)+".png' width='55px' height='55px' title=' Some Random Description "+ Math.random() +"' /></li>");
-						$('p#remove-items-links').append('<button class="removeFromItemList" id="remove-'+global_max_item+'">Remove Item No - '+global_max_item+'</button>');
-						global_max_item = global_max_item - 1;
-					}else {
-						alert ("Hey Stop you bugger, You can't add More then #10 items");	
-					}
-				});
-			
-			$(".removeFromItemList").live("click", function(){
-					itemNo = $(this).attr("id").split('-')[1];
-					$("li#site-bottom-bar-item-"+itemNo).remove();
-					$(this).remove();
-					global_max_item = global_max_item + 1;
-				});
-		});
- 
-	</script>
+	<script type="text/javascript" src="js/FixBar.js"></script>
 </head>
 <body>
  
